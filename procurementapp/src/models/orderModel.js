@@ -10,7 +10,8 @@ const orderModel=new Schema({
         {
            item:{
                type: Schema.Types.ObjectId,
-               ref: 'Item'
+               ref: 'Item',
+               require: true
            },
             quantity: {
                 type: Number
@@ -31,7 +32,8 @@ const itemModel = new Schema({
         type: String
     },
     supplier: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Item',
         require: true
     },
     deliverySite: {

@@ -33,7 +33,7 @@ const orderController=function () {
 
     this.getOrders = () => {
         return new Promise((resolve, reject) => {
-            orderModel.find().exec().then((data) => {
+            orderModel.find().populate('itemList').exec().then((data) => {
                 resolve({status: 200, orders: data})
             }).catch(err => {
                 reject({status: 404, message: "Error: " + err})
