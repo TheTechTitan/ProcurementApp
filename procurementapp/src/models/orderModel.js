@@ -2,10 +2,6 @@ const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
 const orderModel=new Schema({
-    orderID: {
-        type: String,
-        require: true
-    },
     date: {
         type: Date,
         require: true
@@ -14,7 +10,8 @@ const orderModel=new Schema({
         {
            item:{
                type: Schema.Types.ObjectId,
-               ref: 'Item'
+               ref: 'Item',
+               require: true
            },
             quantity: {
                 type: Number
@@ -24,10 +21,6 @@ const orderModel=new Schema({
 });
 
 const itemModel = new Schema({
-    itemID: {
-        type: String,
-        require: true
-    },
     name: {
         type: String,
         require: true
@@ -39,7 +32,8 @@ const itemModel = new Schema({
         type: String
     },
     supplier: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'SupplierModel',
         require: true
     },
     deliverySite: {
@@ -67,13 +61,13 @@ const itemModel = new Schema({
     }
 });*/
 
-mongoose.connect("mongodb://localhost:27017/Procurement", (err) => {
-    if (err) {
-        console.error(err);
-        process.exit(-1);
-    }
-    console.log("Connected successfully to MongoDB");
-});
+// mongoose.connect("mongodb://localhost:27017/Procurement", {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
+//     if (err) {
+//         console.error(err);
+//         process.exit(-1);
+//     }
+//     console.log("Connected successfully to MongoDB");
+// });
 
 mongoose.model("Order", orderModel);
 mongoose.model("Item", itemModel);
