@@ -1,6 +1,7 @@
 const mongoose = require('../models/UserModel');
 const schema = mongoose.model('UserModel');
 
+
 //Bcrypt for Password Hashing
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -15,6 +16,7 @@ const UserController = function(){
                 lastName : data.lastName,
                 email : data.email,
                 userLevel : data.userLevel,
+                company : data.companyId,
                 password : data.password,
                 resetPasswordToken: null,
                 resetPasswordExpires: null
@@ -46,7 +48,7 @@ const UserController = function(){
     //Find User by Email
     this.checkUserExisting = function(email) {
         return new Promise ((resolve, reject) => {
-            schema.findOne({ email : email }).exec().then((data) => {
+            schema.findOne({ email : email }).populate('company').exec().then((data) => {
                 if(data){
                     resolve({status : 200, data : data});
                 } else {

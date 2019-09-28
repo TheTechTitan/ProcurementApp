@@ -68,16 +68,18 @@ router.post('/login', (req, res, next) => {
        } else {
          req.logIn(user, err => {
              console.log(user);
-             User.findOne({ email : user.email })
+             User.findOne({ email : user.email }).populate('company')
          .then( user => {
              const token = jwt.sign({id: user.email}, jwtSecret);
              res.status(200).send({
                  auth: true,
+                 _id: user._id,
                  token: token,
                  email: user.email,
                  firstName: user.firstName,
                  lastName: user.lastName,
                  userLevel: user.userLevel,
+                 company: user.company,
                  message: 'User found & logged in'
              });
          }).catch((err) => {
@@ -110,10 +112,12 @@ router.get('/finduser', (req, res, next) => {
             res.status(200).send({
 
                 auth : true,
+                _id: user._id,
                 firstName : user.firstName,
                 lastName : user.lastName,
                 email : user.email,
-                userLevel : user.userLevel
+                userLevel : user.userLevel,
+                company : user.company
 
             })
 

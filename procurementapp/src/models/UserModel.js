@@ -23,6 +23,10 @@ const UserSchema = Schema({
       type: Number,
       required: true
     },
+    company:{
+        type: Schema.Types.ObjectId,
+        ref: 'CompanyModel'
+    },
     date: {
         type: Date,
         default: Date.now()
