@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { Avatar, Title, Subheading, TextInput, Button } from 'react-native-paper';
 import {Dropdown} from 'react-native-material-dropdown';
-import DatePicker from 'react-native-datepicker'
 
 import {Actions} from "react-native-router-flux";
 

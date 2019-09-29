@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip } from 'react-native-paper';
-import Swipeout from 'react-native-swipeout';
 // import { Actions } from 'react-native-router-flux';
 // import NavBar from "./Homescreen";
 
@@ -162,11 +161,11 @@ class ViewCart extends Component {
                 <ImageBackground
                     resizeMode={'stretch'} // or cover
                     style={{flex: 1}} // must be passed from the parent, the number may vary depending upon your screen size
-                    source={require('C:/Users/Binali Jayawindi/Desktop/3rd Year/2nd Semester/User Experience Engineering/Fitzky/FitzkyUEE/fitzkyUEE/components/screens/delivery/InterfaceNew.png')}
+                    source={require('../../../images/AppBg.jpg')}
                 >
                     <View style={{marginTop:20}}>
-                        <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
-                        <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>STATUS</Text>
+                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
+                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>STATUS</Text>
                     </View>
                     <View style={{flexDirection:'row', paddingLeft:10}}>
                         <Card style={{width : (Dimensions.get('window').width - 30)/2, backgroundColor:"#f2a600"}} theme={{ roundness : 15 }} >
