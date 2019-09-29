@@ -126,8 +126,8 @@ onSubmit(e) {
 
   _hideDialog = () => this.setState({ visible: false });
 
-  navToEnquiries = (dataObject) =>{
-    Actions.jump('viewEnquiriesMain',{dataObject: dataObject})
+  navToEnquiries = () =>{
+    Actions.jump('viewEnquiries')
 }
 
     
@@ -150,9 +150,9 @@ onSubmit(e) {
        
       <ScrollView>
       <View>
-        <Text style={{fontSize:45,color:'#ffa600',fontWeight:3,marginLeft:265,marginTop:20}}>MAKE</Text>
-        <Text style={{fontSize:45,color:'#ffa600',fontWeight:3,marginLeft:200}}>ENQUIRY</Text>
-        <Button mode="contained" color='#ffbf00' onPress={()=>this.navToEnquiries(dataObject)} style={{width:160, marginLeft:25,marginTop:-45}}>
+        <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:265,marginTop:20}}>MAKE</Text>
+        <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:200}}>ENQUIRY</Text>
+        <Button mode="contained" color='#ffbf00' onPress={()=>this.navToEnquiries()} style={{width:160, marginLeft:25,marginTop:-45}}>
          VIEW ENQUIRIES
       </Button>
       </View>

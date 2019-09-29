@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import {
     SafeAreaView,
     TouchableOpacity,
@@ -8,9 +8,20 @@ import {
     View,
     Picker,
     Dimensions,
-    ImageBackground
+    ImageBackground, ScrollView
 } from 'react-native';
-import { Avatar, Title, Subheading, TextInput, Button } from 'react-native-paper';
+import {
+    Avatar,
+    Title,
+    Subheading,
+    TextInput,
+    Button,
+    Card,
+    Checkbox,
+    Portal,
+    Dialog,
+    IconButton, Divider, Paragraph
+} from 'react-native-paper';
 
 import {Actions} from "react-native-router-flux";
 
@@ -24,7 +35,8 @@ export default class Login extends Component {
         this.state={
             email: '',
             password: '',
-            loading: false
+            loading: false,
+            user: []
         }
     }
 
@@ -45,12 +57,18 @@ export default class Login extends Component {
     componentDidMount() {
 
         console.log(this.props.user.firstName)
-
+        if(this.props.user){
+            this.setState({
+                user : this.props.user
+            })
+        }
     }
+
+
 
     render() {
 
-        const { email, password, loading } = this.state;
+        const { email, password, loading, user } = this.state;
 
         return (
             <ImageBackground
@@ -58,9 +76,110 @@ export default class Login extends Component {
                 style={{width: '100%', height: '100%'}}
             >
                 <SafeAreaView>
-                    <View style={styles.container}>
-                        <Avatar.Icon style={styles.iconStyle} size={100} icon="business"/>
-                    </View>
+                    <ScrollView style={{height: '100%'}}>
+                        <View style={{flex: 1, flexDirection: 'row'}}>
+                            <View style={{flex: 1}}>
+                                <Subheading
+                                    style={{ color: '#f4c737', textAlign: 'right', paddingRight: 20, paddingTop: 40, paddingBottom: 10, fontSize: 45, fontWeight: 'bold'}}>
+                                    Home
+                                </Subheading>
+                            </View>
+                        </View>
+                        <Card style={{
+                            backgroundColor: '#f4c737',
+                            paddingVertical: 10,
+                            marginLeft: 20,
+                            marginRight: 20,
+                            marginTop: 10,
+                            borderRadius: 25
+                        }}>
+                            <View style={{flex: 1, flexDirection: 'row'}}>
+                                <View style={{flex: 1}}>
+                                    <Avatar.Icon style={styles.iconStyle} size={100} icon="excavator" color='black'/>
+                                </View>
+                                <View style={{flex: 1}}>
+                                    <Subheading
+                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, paddingTop: 6, fontSize: 16, fontWeight: 'bold' }}>
+                                        {user.firstName + ' ' + user.lastName}
+                                    </Subheading>
+                                    <Subheading
+                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, fontSize: 16 }}>
+                                        Maga
+                                    </Subheading>
+                                    <Subheading
+                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, fontSize: 16 }}>
+                                        {user.userLevel == 1 ? "Site Manager" : user.userLevel == 2 ? "Procurement Staff" : "Admin"}
+                                    </Subheading>
+                                </View>
+                            </View>
+                        </Card>
+
+                        {user.userLevel == 2
+                            ?
+                            <TouchableOpacity onPress={() => Actions.jump('deliveryList')}>
+                                <Card style={{
+                                    backgroundColor: '#FAFAFA',
+                                    height: 50,
+                                    marginLeft: 20,
+                                    marginRight: 20,
+                                    marginTop: 10,
+                                    borderRadius: 25
+                                }}>
+                                    <View>
+                                        <View style={{marginLeft: 40, marginTop: 12}}>
+                                            <Text style={{fontSize: 18, color: 'black'}}>Suppliers</Text>
+                                        </View>
+                                    </View>
+                                </Card>
+                            </TouchableOpacity>
+                            : user.userLevel == 1 ?
+                                <TouchableOpacity onPress={() => Actions.jump('deliveryList')}>
+                                    <Card style={{
+                                        backgroundColor: '#FAFAFA',
+                                        height: 50,
+                                        marginLeft: 20,
+                                        marginRight: 20,
+                                        marginTop: 10,
+                                        borderRadius: 25
+                                    }}>
+                                        <View>
+                                            <View style={{marginLeft: 40, marginTop: 12}}>
+                                                <Text style={{fontSize: 18, color: 'black'}}>Orders</Text>
+                                            </View>
+                                        </View>
+                                    </Card>
+                                </TouchableOpacity>
+                                : <Fragment/>
+                        }
+
+                        <TouchableOpacity onPress={() => Actions.jump('enquiries')}>
+                            <Card style={{backgroundColor:'#FAFAFA',height:50, marginLeft:20, marginRight:20, marginTop:10, borderRadius:25}}>
+                                <View>
+                                    <View style={{marginLeft:40,marginTop:12}}>
+                                        <Text style={{fontSize:18, color: 'black'}}>Enquiries</Text>
+                                    </View>
+                                </View>
+                            </Card>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Actions.jump('deliveryStatus')}>
+                            <Card style={{
+                                backgroundColor: '#FAFAFA',
+                                height: 50,
+                                marginLeft: 20,
+                                marginRight: 20,
+                                marginTop: 10,
+                                borderRadius: 25
+                            }}>
+                                <View>
+                                    <View style={{marginLeft: 40, marginTop: 12}}>
+                                        <Text style={{fontSize: 18, color: 'black'}}>Deliveries</Text>
+                                    </View>
+                                </View>
+                            </Card>
+                        </TouchableOpacity>
+
+
+                    </ScrollView>
                 </SafeAreaView>
             </ImageBackground>
 
@@ -79,6 +198,9 @@ const styles = StyleSheet.create({
     },
     iconStyle: {
         backgroundColor: 'transparent',
+        color: 'black',
+        alignSelf: 'flex-start',
+        paddingLeft: 15
     },
     textStyle: {
         color: 'white',

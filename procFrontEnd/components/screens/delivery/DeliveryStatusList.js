@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip } from 'react-native-paper';
-import Swipeout from 'react-native-swipeout';
+import {Actions} from "react-native-router-flux";
 // import { Actions } from 'react-native-router-flux';
 // import NavBar from "./Homescreen";
 
@@ -15,15 +15,13 @@ class HomeData extends Component {
         }
     }
 
-    // onCardPress = (dataObject) =>{
+    onCardPress = (dataObject) =>{
 
-    //     console.log('Card Pressed ' + this.state.homeSelected);
-    //     if(this.state.homeSelected == 'Classes'){
-    //         Actions.classMain({dataObject: dataObject})
-    //     } 
+        console.log('Card Pressed ' + this.state.homeSelected);
+        Action.jump('deliveryNotification')
 
 
-    // }
+    }
 
     // onBookNow = () =>{
 
@@ -162,11 +160,11 @@ class HomeData extends Component {
           <ImageBackground
            resizeMode={'stretch'} // or cover
            style={{flex: 1}} // must be passed from the parent, the number may vary depending upon your screen size
-           source={require('C:/Users/Binali Jayawindi/Desktop/3rd Year/2nd Semester/User Experience Engineering/Fitzky/FitzkyUEE/fitzkyUEE/components/screens/delivery/InterfaceNew.png')}
+           source={require('../../../images/AppBg.jpg')}
           >    
           <View style={{marginTop:20}}>
-              <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
-          <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>STATUS</Text>
+              <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>DELIVERY</Text>
+          <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>STATUS</Text>
               </View> 
               <View style={{flexDirection:'row', paddingLeft:10}}>
               <Card style={{width : (Dimensions.get('window').width - 30)/2, backgroundColor:"#f2a600"}} theme={{ roundness : 15 }} >
@@ -182,7 +180,7 @@ class HomeData extends Component {
                 { dataOrders.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-                                    <TouchableOpacity onPress={() => this.onCardPress(dataObject)} key={index + "class" + "touchable"}>                                       
+                                    <TouchableOpacity onPress={() => Actions.jump('deliveryList')} key={index + "class" + "touchable"}>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                             <View style={{paddingTop:18, flexDirection:'row', height:50}}>
                                                 <View>

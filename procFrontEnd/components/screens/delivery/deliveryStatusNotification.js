@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { ScrollView, View, StyleSheet, Provider, Alert, Dimensions, Text , Button} from 'react-native';
+import { ScrollView, View, StyleSheet, Provider, Alert, Dimensions, Text , Button, ImageBackground} from 'react-native';
 import { Paragraph, Portal, Dialog } from 'react-native-paper';
+import {Actions} from "react-native-router-flux";
 
 const bgImage = require('../../../images/AppBg.jpg')
 
@@ -13,8 +14,8 @@ export default class deliveryStatusNotification extends Component {
                 source={bgImage}
                 style={{width: '100%', height: '100%'}}
             >
-      <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
-    <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>CONFIRMATION</Text>
+      <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>DELIVERY</Text>
+    <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>CONFIRMATION</Text>
       
 
         <Dialog
@@ -40,7 +41,7 @@ export default class deliveryStatusNotification extends Component {
           <Button title= "     OK      "
           color="#f7c50c"
           
-           
+           onPress={() => Actions.jump('deliveryList')}
            />
         </View>
       </Dialog.Actions>
