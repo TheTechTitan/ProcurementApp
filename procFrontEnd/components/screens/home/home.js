@@ -132,7 +132,7 @@ export default class Login extends Component {
                                 </Card>
                             </TouchableOpacity>
                             : user.userLevel == 1 ?
-                                <TouchableOpacity onPress={() => Actions.jump('deliveryList')}>
+                                <TouchableOpacity onPress={() => Actions.jump('purchaseOrder')}>
                                     <Card style={{
                                         backgroundColor: '#FAFAFA',
                                         height: 50,
@@ -172,23 +172,6 @@ export default class Login extends Component {
                                 <View>
                                     <View style={{marginLeft: 40, marginTop: 12}}>
                                         <Text style={{fontSize: 18, color: 'black'}}>Deliveries</Text>
-                                    </View>
-                                </View>
-                            </Card>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => Actions.jump('purchaseOrder')}>
-                            <Card style={{
-                                backgroundColor: '#FAFAFA',
-                                height: 50,
-                                marginLeft: 20,
-                                marginRight: 20,
-                                marginTop: 10,
-                                borderRadius: 25
-                            }}>
-                                <View>
-                                    <View style={{marginLeft: 40, marginTop: 12}}>
-                                        <Text style={{fontSize: 18, color: 'black'}}>Orders</Text>
                                     </View>
                                 </View>
                             </Card>

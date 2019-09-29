@@ -164,8 +164,8 @@ class ViewCart extends Component {
                     source={require('../../../images/AppBg.jpg')}
                 >
                     <View style={{marginTop:20}}>
-                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
-                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>STATUS</Text>
+                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>VIEW</Text>
+                        <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>CART</Text>
                     </View>
                     <View style={{flexDirection:'row', paddingLeft:10}}>
                         <Card style={{width : (Dimensions.get('window').width - 30)/2, backgroundColor:"#f2a600"}} theme={{ roundness : 15 }} >

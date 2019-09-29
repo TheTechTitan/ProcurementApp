@@ -66,7 +66,7 @@ export default class PurchaseOrder extends Component {
                             <TextInput
                                 mode='flat'
                                 style={styles.inputStyle}
-                                label='First Name'
+                                label='Item'
                                 value={OrderItem}
                                 selectionColor='#f4c737'
                                 textContentType='name'
@@ -77,28 +77,32 @@ export default class PurchaseOrder extends Component {
                             <TextInput
                                 mode='flat'
                                 style={styles.inputStyle}
-                                label='Last Name'
+                                label='Quantity'
                                 value={Quantity}
                                 selectionColor='#f4c737'
                                 textContentType='name'
                                 keyboardType='email-address'
                                 onChangeText={text => this.setState({ lastName : text })}
                             />
-
+                            <View style={{alignSelf: 'center', width: '80%'}}>
 
                             <Dropdown
                                 label='Supplier'
                                 data={this.state.supplier}
+                                baseColor='white'
                                 onChangeText={(value => this.onChangeHandler(value))}
+                                style={{color: 'black', height: 50, width: '80%', alignSelf: 'center'}}
                             />
 
                             <Dropdown
                                 label='Delivery Site'
                                 data={this.state.dSite}
+                                baseColor='white'
+                                style={{color: 'black', height: 50, width: '80%', alignSelf: 'center', marginBottom: 20}}
 
                             />
 
-
+                            </View>
 
                             <Button style={styles.buttonStyle}  mode="contained" onPress={() => console.log('pressed')}>
                                 PROCEED
