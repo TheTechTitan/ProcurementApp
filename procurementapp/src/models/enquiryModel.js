@@ -66,10 +66,10 @@ var feedbackSchema = Schema ({
 mongoose.model('feedbackSchema', feedbackSchema);
 
 
-//Connecting to the procurement construction Database
-mongoose.connect('mongodb://localhost:27017/Procurement',
-    { useNewUrlParser: true ,
-    useUnifiedTopology: true});
-    console.log("Database connection Successfull");
+// //Connecting to the procurement construction Database
+// mongoose.connect('mongodb://localhost:27017/Procurement',
+//     { useNewUrlParser: true ,
+//     useUnifiedTopology: true});
+//     console.log("Database connection Successfull");
 
 module.exports = mongoose;
