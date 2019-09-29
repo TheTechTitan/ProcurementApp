@@ -43,8 +43,8 @@ export default class ViewEnquiries extends React.Component {
            </Text>}
            /> */}
            <View>
-            <Text style={{fontSize:45,color:'#ffa600',fontWeight:3,marginLeft:200,marginTop:20}}>ENQUIRY</Text>
-            <Text style={{fontSize:45,color:'#ffa600',fontWeight:3,marginLeft:298}}>LIST</Text>
+            <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:200,marginTop:20}}>ENQUIRY</Text>
+            <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:298}}>LIST</Text>
           </View>
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
@@ -101,7 +101,8 @@ export default class ViewEnquiries extends React.Component {
 const styles = StyleSheet.create({
  container: {
      backgroundColor:"#F5FCFF",
-     marginTop:20
+     marginTop:20,
+     paddingBottom: 200
  },
  card: {
      backgroundColor:'#fff',

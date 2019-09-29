@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip, RadioButton } from 'react-native-paper';
-import Swipeout from 'react-native-swipeout';
+import {Actions} from "react-native-router-flux";
 // import { Actions } from 'react-native-router-flux';
 // import NavBar from "./Homescreen";
-state = {
-    checked: 'first',
-}
 class HomeData extends Component {
 
     constructor(props){
@@ -14,17 +11,18 @@ class HomeData extends Component {
         this.state={
             homeSelected : this.props.homeSelected,
             dataOrders : [],
-            
-            
-                switch1Value: false,
-          
-           
-           
+
+
+            switch1Value: false,
+            checked: 'first',
+
+
+
             }
         }
-        
-       
-    
+
+
+
 
         toggleSwitch1 = (value) => {
             this.setState({switch1Value: value})
@@ -36,7 +34,7 @@ class HomeData extends Component {
     //     console.log('Card Pressed ' + this.state.homeSelected);
     //     if(this.state.homeSelected == 'Classes'){
     //         Actions.classMain({dataObject: dataObject})
-    //     } 
+    //     }
 
 
     // }
@@ -82,10 +80,10 @@ class HomeData extends Component {
     //             })
     //         })
 
-      
+
     // }
 
-    
+
     render() {
         const { checked } = this.state;
         const {homeSelected, dataGym, dataClasses} = this.state;
@@ -139,7 +137,7 @@ class HomeData extends Component {
         let dataOrdersList = [
             {
                 orderID: '#ON005',
-                
+
                 itemList:[
                     {
                     itemID: '#IN001',
@@ -150,7 +148,7 @@ class HomeData extends Component {
                      deliverySite: 'Site 1 Malabe',
                     dueDate:'25/08/19'
                     },
-            
+
                      {
                 itemID: '#IN002',
                 itemName: 'SLON-PVC-25MM-200M',
@@ -223,33 +221,33 @@ class HomeData extends Component {
 
 
         return (
-         
-            
+
+
           <View style={{flex: 1}}>
-              
-      
+
+
           <ImageBackground
            resizeMode={'stretch'} // or cover
            style={{flex: 1}} // must be passed from the parent, the number may vary depending upon your screen size
-           source={require('C:/Users/Binali Jayawindi/Desktop/3rd Year/2nd Semester/User Experience Engineering/Fitzky/FitzkyUEE/fitzkyUEE/components/screens/delivery/InterfaceNew.png')}
-          >   
+           source={require('../../../images/AppBg.jpg')}
+          >
 
           <View style={{marginTop:20}}>
-              <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>DELIVERY</Text>
-          <Text style={{fontSize:18, textAlign:'right', color:"#f2a600", fontWeight:"3", fontSize:45}}>CONFIRMATION</Text>
-              </View> 
+              <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>DELIVERY</Text>
+          <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>CONFIRMATION</Text>
+              </View>
                   <ScrollView contentContainerStyle={styles.contentContainerStyle}>
                 { dataOrdersList2.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-                                
 
-                                    <TouchableOpacity onPress={() => this.onCardPress(dataObject)} key={index + "class" + "touchable"}>
-                                         <Text style={{fontSize:25, textAlign:'center', fontWeight:"100", color:"#f2a600"}}>{dataObject.orderID}</Text>                                     
+
+                                    <TouchableOpacity onPress={() => Actions.jump('deliveryNotification')} key={index + "class" + "touchable"}>
+                                         <Text style={{fontSize:25, textAlign:'center', fontWeight:"100", color:"#f2a600"}}>{dataObject.orderID}</Text>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                         <View style={{paddingTop:18, flexDirection:'row', height:50}}>
-                                              <View>                                           
-                                                   <Text style={{textAlign:'left', color:'#000000', fontSize:20, fontWeight:"300"}}>{dataObject.itemID}</Text> 
+                                              <View>
+                                                   <Text style={{textAlign:'left', color:'#000000', fontSize:20, fontWeight:"300"}}>{dataObject.itemID}</Text>
                                                 </View>
                                               {/* <View style={{paddingLeft: 50}}>
                                             <Picker
@@ -270,7 +268,7 @@ class HomeData extends Component {
                                                 </View>
                                                 <View style={{flexDirection:'row'}}>
                                                     <Text style={{textAlign:'left',color:'#000000'}}>Quantity             :</Text>
-                                                    <Text style={{textAlign:'left', color:'#000000'}}>{dataObject.quantity}</Text> 
+                                                    <Text style={{textAlign:'left', color:'#000000'}}>{dataObject.quantity}</Text>
                                                 </View>
                                                 <View style={{flexDirection:'row'}}>
                                                     <Text style={{textAlign:'left',color:'#000000'}}>Amount              :</Text>
@@ -278,7 +276,7 @@ class HomeData extends Component {
                                                 </View>
                                                 <View style={{flexDirection:'row'}}>
                                                     <Text style={{textAlign:'left',color:'#000000'}}>Supplier            :</Text>
-                                                    <Text style={{textAlign:'left', color:'#000000'}}>{dataObject.supplier}</Text> 
+                                                    <Text style={{textAlign:'left', color:'#000000'}}>{dataObject.supplier}</Text>
                                                 </View>
                                                 <View style={{flexDirection:'row'}}>
                                                     <Text style={{textAlign:'left',color:'#000000'}}>Delivery Site       :</Text>
@@ -303,8 +301,8 @@ class HomeData extends Component {
                                                         <RadioButton value="second" />
                                                         </View>
                                                     </RadioButton.Group>
-                                                </View>  
-                                                                                          
+                                                </View>
+
                                                 </View>
                                         </Card.Content>
                                     </TouchableOpacity>
@@ -317,14 +315,14 @@ class HomeData extends Component {
                                                 <Switch
                                                     onValueChange = {this.toggleSwitch1}
                                                     value = {this.state.switch1Value}/>
-                                                    </View> 
+                                                    </View>
                     </Card>
-                                        
+
             </ScrollView>
             </ImageBackground>
             </View>
-            
-            
+
+
         );
     }
 }

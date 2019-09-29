@@ -47,7 +47,7 @@ export default class App extends Component {
 
     return (
 
-        <View theme={theme}>
+        <PaperProvider theme={theme}>
           <StatusBar
             barStyle="light-content"
           />
@@ -57,7 +57,7 @@ export default class App extends Component {
           >
             <Routes />
           </ImageBackground>
-        </View>
+        </PaperProvider>
 
   );
   }
