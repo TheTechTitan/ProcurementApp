@@ -1,4 +1,4 @@
-var enquiryController = require('../controllers/enquiryController');
+var enquiryController = require('../controller/enquiryController');
 var express= require('express');
 var router = express.Router();
 

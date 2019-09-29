@@ -27,6 +27,7 @@ export default class Register extends Component {
             lastName: '',
             email: '',
             company: 0,
+            companyFetched: '',
             pickerVisible: false,
             password: '',
             confirmPassword: '',
@@ -42,9 +43,28 @@ export default class Register extends Component {
         }
     }
 
+    componentDidMount() {
+
+        const fetchCompanyUri = global.uri + '/rest/api/company'
+        console.log(fetchCompanyUri)
+
+        fetch(fetchCompanyUri)
+            .then(response =>{
+                return response.json()
+            })
+            .then(json => {
+                this.setState({
+                    companyFetched : json.data
+                })
+            })
+
+    }
+
     render() {
 
-        const { firstName, lastName, email, company, password, confirmPassword, loading, pickerVisible } = this.state;
+        const { firstName, lastName, email, company, companyFetched, password, confirmPassword, loading, pickerVisible } = this.state;
+        let companyName = companyFetched.length > 0 ? companyFetched.find(companyFetched => companyFetched._id === company) : '';
+        console.log(companyName)
 
         return (
             <ImageBackground
@@ -58,7 +78,7 @@ export default class Register extends Component {
                     </View>
                     <View>
                         <Title style={styles.titleStyle}>Procurement App</Title>
-                        <Subheading style={styles.textStyle}>Login with your credentials</Subheading>
+                        <Subheading style={styles.textStyle}>Register as a new User</Subheading>
                         <TextInput
                             mode='flat'
                             style={styles.inputStyle}
@@ -92,7 +112,7 @@ export default class Register extends Component {
                         <View style={{width: '80%', alignSelf: 'center'}}>
                             <View style={{flex: 1, flexDirection: 'row'}}>
                                 <View style={{flex: 1}}>
-                                    <Subheading style={{color: 'white', paddingLeft: 10, paddingTop: 10, paddingBottom: 10}}>{company == 0 ? 'Select a Company' : "Company : " + company}</Subheading>
+                                    <Subheading style={{color: 'white', paddingLeft: 10, paddingTop: 10, paddingBottom: 10}}>{company == 0 ? 'Select a Company' : "Company : " + companyName.name}</Subheading>
                                 </View>
                                 <View style={{flex: 1}}>
                                     <Subheading
@@ -122,13 +142,11 @@ export default class Register extends Component {
                                     onValueChange={(text) => this.setState({ company: text })}
                                 >
                                     <Picker.Item label="Select a Company" value={0} key="0" />
-                                    <Picker.Item label="Maga" value="Maga" key="1" />
-                                    <Picker.Item label="Access" value="Access" key="2" />
-                                    <Picker.Item label="John Keells" value="John Keells" key="3" />
-                                    <Picker.Item label="Prime" value="Prime" key="4" />
-                                    <Picker.Item label="Blue Mountain" value="Blue Mountain" key="5" />
-                                    <Picker.Item label="Riverston Holdings" value="Riverston Holdings" key="6" />
-                                    <Picker.Item label="MunBer" value="MunBer" key="7" />
+                                    {companyFetched.length > 0 ? companyFetched.map((companies, index) => {
+                                        return <Picker.Item label={companies.name} value={companies._id} key={index + 1} />
+                                        console.log(companies._id)
+                                    })
+                                    : <Picker.Item label="No data available" value={100} key="2" />}
 
                                 </Picker>
                             </Modal>
