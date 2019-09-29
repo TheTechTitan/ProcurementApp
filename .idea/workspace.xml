@@ -3,8 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="30d632a8-63ea-4863-b5cf-f6bb0c3bd387" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/procFrontEnd/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/procFrontEnd/App.js" afterDir="false" />
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
       <change beforePath="$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/procFrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/procFrontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procFrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/procFrontEnd/package.json" afterDir="false" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,12 +28,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/auth/Register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="27" column="22" lean-forward="true" selection-end-line="324" selection-end-column="3" />
+=======
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="363">
               <caret line="103" column="47" lean-forward="true" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+=======
+            <state relative-caret-position="341">
+              <caret line="97" column="100" selection-start-line="97" selection-start-column="100" selection-end-line="97" selection-end-column="100" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -30,6 +56,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="505">
@@ -55,33 +82,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+=======
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/procurementapp/src/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+=======
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
         <entry file="file://$PROJECT_DIR$/procurementapp/src/controller/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-21">
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/order/PurchaseOrder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+=======
         <entry file="file://$PROJECT_DIR$/procurementapp/src/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-388">
               <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/order/ViewCart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2567">
+              <caret line="217" column="23" selection-start-line="217" selection-start-column="23" selection-end-line="217" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+=======
         <entry file="file://$PROJECT_DIR$/procurementapp/src/config/passport.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="24">
               <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/enquiries/ViewEnquiries.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561">
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+=======
         <entry file="file://$PROJECT_DIR$/procurementapp/src/config/auth.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -91,6 +167,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
@@ -98,8 +175,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procurementapp/src/config/jwtConfig.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state>
+              <caret column="46" selection-start-column="46" selection-end-column="46" />
+=======
             <state relative-caret-position="30">
               <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
@@ -107,15 +189,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/auth/Login.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="374">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+=======
             <state relative-caret-position="517">
               <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="33" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/deliveryList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="40" selection-start-line="3" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/deliveryStatusNotification.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="306">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+=======
+            <state relative-caret-position="45">
+              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -166,14 +282,21 @@
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/delivery/deliveryStatusNotification.js" />
         <option value="$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js" />
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/supplier/supplierMain.js" />
+=======
+        <option value="$PROJECT_DIR$/procFrontEnd/components/screens/order/PurchaseOrder.js" />
+        <option value="$PROJECT_DIR$/procFrontEnd/components/screens/order/ViewCart.js" />
+        <option value="$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js" />
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1097" />
+    <option name="x" value="361" />
+    <option name="y" value="19" />
+    <option name="width" value="1022" />
+    <option name="height" value="751" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -218,7 +341,7 @@
               <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="delivery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
@@ -226,11 +349,51 @@
               <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="supplier" type="462c0819:PsiDirectoryNode" />
+              <item name="enquiries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProcurementAppCSSE" type="462c0819:PsiDirectoryNode" />
+              <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProcurementAppCSSE" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="supplier" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< HEAD
+              <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
+            </path>
+            <path>
+              <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProcurementAppCSSE" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="procFrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProcurementAppCSSE" type="462c0819:PsiDirectoryNode" />
+              <item name="procurementapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProcurementAppCSSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProcurementAppCSSE" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
               <item name="procurementapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -241,6 +404,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -284,17 +448,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569680379636</updated>
+<<<<<<< HEAD
       <workItem from="1569680381228" duration="32758000" />
+=======
+<<<<<<< HEAD
+      <workItem from="1569680381228" duration="24849000" />
+      <workItem from="1569744795757" duration="2709000" />
+=======
+      <workItem from="1569680381228" duration="30985000" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="32758000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="27558000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="118" y="13" width="1022" height="751" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="30985000" />
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1097" extended-state="0" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -302,6 +487,11 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27743903" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32935324" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -309,6 +499,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34789643" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -421,6 +615,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js">
+=======
     <entry file="file://$PROJECT_DIR$/procurementapp/src/models/SupplyChainManager.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -449,16 +646,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/procurementapp/src/models/SupplierModel.js">
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="527">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#128#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/auth/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/procFrontEnd/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
         </state>
       </provider>
     </entry>
@@ -474,6 +696,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/enquiries/ViewEnquiries.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurementapp/src/models/SupplierModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurementapp/src/models/SupplyChainManager.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurementapp/src/models/UserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurementapp/src/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/auth/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="22" lean-forward="true" selection-end-line="324" selection-end-column="3" />
+=======
         <state relative-caret-position="144">
           <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
           <folding>
@@ -486,32 +743,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="162" column="68" lean-forward="true" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/auth/Register.js">
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/order/PurchaseOrder.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1122">
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+=======
         <state relative-caret-position="-513">
           <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="173" selection-end-column="35" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/order/ViewCart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="217" column="23" selection-start-line="217" selection-start-column="23" selection-end-line="217" selection-end-column="23" />
+=======
     <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="166" column="76" selection-start-line="166" selection-start-column="76" selection-end-line="166" selection-end-column="76" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/enquiries/ViewEnquiries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+=======
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/routes/Routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#128#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+=======
+>>>>>>> 13ccbe9428a8715cbcbf2e86be61273cb68ded31
     <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/deliveryList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -594,6 +892,7 @@
           <caret line="103" column="47" lean-forward="true" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+>>>>>>> ca0b6e0540fbe9038053a6a04c29658bfa9c1b65
           </folding>
         </state>
       </provider>
