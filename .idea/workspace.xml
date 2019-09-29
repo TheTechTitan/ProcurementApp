@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30d632a8-63ea-4863-b5cf-f6bb0c3bd387" name="Default Changelist" comment="" />
+    <list default="true" id="30d632a8-63ea-4863-b5cf-f6bb0c3bd387" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -72,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-782">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="17">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -159,12 +161,13 @@
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/home/home.js" />
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/order/PurchaseOrder.js" />
         <option value="$PROJECT_DIR$/procFrontEnd/components/screens/order/ViewCart.js" />
+        <option value="$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="118" />
-    <option name="y" value="13" />
+    <option name="x" value="361" />
+    <option name="y" value="19" />
     <option name="width" value="1022" />
     <option name="height" value="751" />
   </component>
@@ -336,12 +339,12 @@
       <option name="presentableId" value="Default" />
       <updated>1569680379636</updated>
       <workItem from="1569680381228" duration="24849000" />
-      <workItem from="1569744795757" duration="1871000" />
+      <workItem from="1569744795757" duration="2709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26720000" />
+    <option name="totallyTimeSpent" value="27558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="118" y="13" width="1022" height="751" extended-state="0" />
@@ -627,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/procFrontEnd/components/screens/delivery/DeliveryStatusList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-782">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="17">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
