@@ -10,6 +10,7 @@ import ViewEnquiries from '../screens/enquiries/ViewEnquiries';
 import DeliveryList from '../screens/delivery/deliveryList';
 import DeliveryStatus from '../screens/delivery/DeliveryStatusList';
 import DeliveryNotification from '../screens/delivery/deliveryStatusNotification';
+import SupplierMain from '../screens/supplier/supplierMain';
 
 
 
@@ -32,12 +33,12 @@ class Routes extends Component{
                     <Scene key = "login" component = {Login} hideNavBar={true} initial = {true} />
                     <Scene key = "register" component = {Register} hideNavBar={true} />
                     <Scene key = "home" component = {Home} hideNavBar={true} />
-                    <Scene key = "enquiries" component = {Enquiries}/>
-                    <Scene key = "viewEnquiries" component = {ViewEnquiries}/>
+                    <Scene key = "enquiries" component = {Enquiries} navTransparent={true}/>
+                    <Scene key = "viewEnquiries" component = {ViewEnquiries} navTransparent={true}/>
                     <Scene key = "deliveryList" component = {DeliveryList}/>
-                    <Scene key = "deliveryStatus" component = {DeliveryStatus}/>
-                    <Scene key = "deliveryNotification" component = {DeliveryNotification}/>
-
+                    <Scene key = "deliveryStatus" component = {DeliveryStatus} navTransparent={true}/>
+                    <Scene key = "deliveryNotification" component = {DeliveryNotification} navTransparent={true}/>
+                    <Scene key = "supplierMain" component = {SupplierMain} navTransparent={true}/>
                 </Scene>
             </Router>
         );

@@ -80,7 +80,7 @@ export default class Login extends Component {
                             <View style={{flex: 1}}>
                                 <Subheading
                                     style={{ color: '#f4c737', textAlign: 'right', paddingRight: 20, paddingTop: 40, paddingBottom: 10, fontSize: 45, fontWeight: 'bold'}}>
-                                    Home
+                                    Suppliers
                                 </Subheading>
                             </View>
                         </View>
@@ -90,77 +90,33 @@ export default class Login extends Component {
                             marginLeft: 20,
                             marginRight: 20,
                             marginTop: 10,
+                            paddingHorizontal: 20,
                             borderRadius: 25
                         }}>
                             <View style={{flex: 1, flexDirection: 'row'}}>
                                 <View style={{flex: 1}}>
-                                    <Avatar.Icon style={styles.iconStyle} size={100} icon="account-circle" color='black'/>
-                                </View>
-                                <View style={{flex: 1}}>
                                     <Subheading
-                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, paddingTop: 6, fontSize: 16, fontWeight: 'bold' }}>
-                                        {user.firstName + ' ' + user.lastName}
+                                        style={{ color: 'black', textAlign: 'left', paddingleft: 20, paddingTop: 6, fontSize: 26}}>
+                                        08 Suppliers
                                     </Subheading>
                                     <Subheading
-                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, fontSize: 16 }}>
-                                        Maga
-                                    </Subheading>
-                                    <Subheading
-                                        style={{ color: 'black', textAlign: 'left', paddingRight: 20, fontSize: 16 }}>
-                                        {user.userLevel == 1 ? "Site Manager" : user.userLevel == 2 ? "Procurement Staff" : "Admin"}
+                                        style={{ color: 'black', textAlign: 'left', paddingleft: 20, paddingTop: 6, fontSize: 16}}>
+                                        {'Last Updated : ' + new Date().toLocaleDateString()}
                                     </Subheading>
                                 </View>
                             </View>
                         </Card>
 
-                        {user.userLevel == 2
-                            ?
-                            <TouchableOpacity onPress={() => Actions.jump('supplierMain', {user : user})}>
-                                <Card style={{
-                                    backgroundColor: '#FAFAFA',
-                                    height: 50,
-                                    marginLeft: 20,
-                                    marginRight: 20,
-                                    marginTop: 10,
-                                    borderRadius: 25
-                                }}>
-                                    <View>
-                                        <View style={{marginLeft: 40, marginTop: 12}}>
-                                            <Text style={{fontSize: 18, color: 'black'}}>Suppliers</Text>
-                                        </View>
-                                    </View>
-                                </Card>
-                            </TouchableOpacity>
-                            : user.userLevel == 1 ?
-                                <TouchableOpacity onPress={() => Actions.jump('deliveryList')}>
-                                    <Card style={{
-                                        backgroundColor: '#FAFAFA',
-                                        height: 50,
-                                        marginLeft: 20,
-                                        marginRight: 20,
-                                        marginTop: 10,
-                                        borderRadius: 25
-                                    }}>
-                                        <View>
-                                            <View style={{marginLeft: 40, marginTop: 12}}>
-                                                <Text style={{fontSize: 18, color: 'black'}}>Orders</Text>
-                                            </View>
-                                        </View>
-                                    </Card>
-                                </TouchableOpacity>
-                                : <Fragment/>
-                        }
-
-                        <TouchableOpacity onPress={() => Actions.jump('enquiries')}>
+                        <TouchableOpacity onPress={() => console.log('pressed')}>
                             <Card style={{backgroundColor:'#FAFAFA',height:50, marginLeft:20, marginRight:20, marginTop:10, borderRadius:25}}>
                                 <View>
                                     <View style={{marginLeft:40,marginTop:12}}>
-                                        <Text style={{fontSize:18, color: 'black'}}>Enquiries</Text>
+                                        <Text style={{fontSize:18, color: 'black'}}>View Suppliers</Text>
                                     </View>
                                 </View>
                             </Card>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => Actions.jump('deliveryStatus')}>
+                        <TouchableOpacity onPress={() => console.log('pressed')}>
                             <Card style={{
                                 backgroundColor: '#FAFAFA',
                                 height: 50,
@@ -171,13 +127,20 @@ export default class Login extends Component {
                             }}>
                                 <View>
                                     <View style={{marginLeft: 40, marginTop: 12}}>
-                                        <Text style={{fontSize: 18, color: 'black'}}>Deliveries</Text>
+                                        <Text style={{fontSize: 18, color: 'black'}}>Register new Suppliers</Text>
                                     </View>
                                 </View>
                             </Card>
                         </TouchableOpacity>
-
-
+                        <TouchableOpacity onPress={() => console.log('pressed')}>
+                            <Card style={{backgroundColor:'#FAFAFA',height:50, marginLeft:20, marginRight:20, marginTop:10, borderRadius:25}}>
+                                <View>
+                                    <View style={{marginLeft:40,marginTop:12}}>
+                                        <Text style={{fontSize:18, color: 'black'}}>Requests</Text>
+                                    </View>
+                                </View>
+                            </Card>
+                        </TouchableOpacity>
                     </ScrollView>
                 </SafeAreaView>
             </ImageBackground>
