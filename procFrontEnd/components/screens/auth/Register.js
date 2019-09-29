@@ -28,11 +28,63 @@ export default class Register extends Component {
             email: '',
             company: 0,
             companyFetched: '',
+            userLevel: 0,
             pickerVisible: false,
+            pickerVisibleUser: false,
             password: '',
             confirmPassword: '',
             loading: false
         }
+    }
+
+    registerUser(){
+
+
+        let registerData = {
+            firstName : this.state.firstName,
+            lastName : this.state.lastName,
+            email : this.state.email.toLowerCase(),
+            userLevel : this.state.userLevel,
+            company : this.state.company,
+            password : this.state.password,
+            confirmPassword : this.state.confirmPassword
+        }
+
+        const fetchRegisterUri = global.uri + '/rest/api/users/register'
+        console.log(fetchRegisterUri)
+
+        this.setState({
+            loading : true
+        })
+
+        //Post Details
+        fetch(fetchRegisterUri, {
+            method : 'POST',
+            body : JSON.stringify(registerData),
+            headers: {'Content-Type' : 'application/json'}
+        }).then(response => {
+            return response.json()
+        }).then(json => {
+            if(json.user){
+                this.setState({
+                    registerUserError: true,
+                    notValidated : true,
+                    errorMessage : 'Error! Email already in use.',
+                }, console.log('Error! Email already in use.'))
+            }
+            if(json.created){
+
+                console.log("User Created");
+                Actions.jump('login')
+            }
+            console.log(json)
+        })
+
+        this.setState({
+            loading : false
+        })
+
+
     }
 
     componentDidUpdate(prevProps) {
@@ -62,7 +114,7 @@ export default class Register extends Component {
 
     render() {
 
-        const { firstName, lastName, email, company, companyFetched, password, confirmPassword, loading, pickerVisible } = this.state;
+        const { firstName, lastName, email, company, companyFetched, userLevel, password, confirmPassword, loading, pickerVisible, pickerVisibleUser } = this.state;
         let companyName = companyFetched.length > 0 ? companyFetched.find(companyFetched => companyFetched._id === company) : '';
         console.log(companyName)
 
@@ -152,6 +204,51 @@ export default class Register extends Component {
                             </Modal>
 
                         </View>
+                        <View style={{width: '80%', alignSelf: 'center'}}>
+                            <View style={{flex: 1, flexDirection: 'row'}}>
+                                <View style={{flex: 1}}>
+                                    <Subheading style={{color: 'white', paddingLeft: 10, paddingTop: 10, paddingBottom: 10}}>
+                                        {userLevel == 0 ? 'Select a User Type' :
+                                            userLevel == 1 ? "User Type : Manager/SiteManager"
+                                        : "User Type : Procurement Staff"}
+                                    </Subheading>
+                                </View>
+                                <View style={{flex: 1}}>
+                                    <Subheading
+                                        style={{ color: '#f4c737', textAlign: 'right', paddingRight: 10, paddingTop: 10, paddingBottom: 10}}
+                                        onPress={() => this.setState({pickerVisibleUser: true})}>Change</Subheading>
+                                </View>
+                            </View>
+                            <Modal
+                                animationType="slide"
+                                transparent={true}
+                                visible={pickerVisibleUser}
+                                onRequestClose={() => {
+                                    Alert.alert('Modal has been closed.');
+                                }}>
+                                <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'white', marginTop: Dimensions.get('window').height * 0.5 }}>
+
+                                    <View style={{flex: 1}}>
+                                        <Subheading
+                                            style={{ color: '#f4c737', textAlign: 'right', fontSize: 20, paddingRight: 15, paddingTop: 10 }}
+                                            onPress={() => this.setState({pickerVisibleUser: false})}>Select</Subheading>
+                                    </View>
+                                </View>
+                                <Picker
+                                    selectedValue={userLevel}
+                                    mode="dropdown"
+                                    style={{backgroundColor: 'white'}}
+                                    onValueChange={(text) => this.setState({ userLevel: text })}
+                                >
+                                    <Picker.Item label="Select a User Type" value={0} key="0" />
+                                    <Picker.Item label="Manager/Site Manager" value={1} key="1" />
+                                    <Picker.Item label="Procurement Staff" value={2} key="2" />
+
+
+                                </Picker>
+                            </Modal>
+
+                        </View>
                         <TextInput
                             style={styles.inputStyle}
                             label='Password'
@@ -168,7 +265,7 @@ export default class Register extends Component {
                             secureTextEntry={true}
                             onChangeText={text => this.setState({ confirmPassword : text })}
                         />
-                        <Button style={styles.buttonStyle} loading={loading} mode="contained" onPress={() => console.log('Pressed')}>
+                        <Button style={styles.buttonStyle} loading={loading} mode="contained" onPress={() => this.registerUser()}>
                             Register
                         </Button>
                         <TouchableOpacity onPress={() => {Actions.jump('login')}} >

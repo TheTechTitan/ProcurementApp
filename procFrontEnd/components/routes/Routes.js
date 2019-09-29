@@ -4,7 +4,7 @@ import { Router, Scene } from 'react-native-router-flux'
 // Import custom Components
 import Login from '../screens/auth/Login';
 import Register from '../screens/auth/Register';
-
+import Home from '../screens/home/home';
 
 
 
@@ -26,6 +26,8 @@ class Routes extends Component{
                 <Scene key = "root">
                     <Scene key = "login" component = {Login} hideNavBar={true} initial = {true} />
                     <Scene key = "register" component = {Register} hideNavBar={true} />
+                    <Scene key = "home" component = {Home} hideNavBar={true} />
+
                 </Scene>
             </Router>
         );

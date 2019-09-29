@@ -22,7 +22,6 @@ export default class Login extends Component {
     constructor(){
         super();
         this.state={
-            homeSelected: 'Gyms',
             email: '',
             password: '',
             loading: false
@@ -33,6 +32,48 @@ export default class Login extends Component {
         this.setState({
             homeSelected : select
         })
+    }
+
+    handleLogin(){
+
+        let loginDetails = {
+            email : this.state.email.toLowerCase(),
+            password : this.state.password
+        }
+
+        const loginPostUrl = global.uri + '/rest/api/users/login';
+        this.setState({
+            loading : true
+        })
+
+        fetch(loginPostUrl,  {
+            method : 'POST',
+            body : JSON.stringify(loginDetails),
+            headers: {'Content-Type' : 'application/json'}
+        }).then(response => {
+            console.log(response)
+            return response.json()
+        }).then(json => {
+            if(json.auth){
+                console.log("User Logged in")
+
+                // window.localStorage.setItem("jwt", json.token);
+                // window.localStorage.setItem("email", json.email);
+                // this.props.setAuth(json)
+                Actions.jump('home', {user : json})
+            } else {
+                this.setState({
+                    loginError : true,
+                    errorMessage : json.message,
+                }, console.log(this.state))
+            }
+            console.log(json)
+        })
+
+        this.setState({
+            loading : false
+        })
+
     }
 
     componentDidUpdate(prevProps) {
@@ -77,7 +118,7 @@ export default class Login extends Component {
                             secureTextEntry={true}
                             onChangeText={text => this.setState({ password : text })}
                         />
-                        <Button style={styles.buttonStyle} loading={loading} mode="contained" onPress={() => console.log('Pressed')}>
+                        <Button style={styles.buttonStyle} loading={loading} mode="contained" onPress={() => this.handleLogin()}>
                             Login
                         </Button>
                         <TouchableOpacity onPress={() => {Actions.jump('register')}} >
