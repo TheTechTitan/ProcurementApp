@@ -1,19 +1,78 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { SafeAreaView, StatusBar, Platform, StyleSheet, ImageBackground, View, Dimensions } from 'react-native';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import Constants from "expo-constants";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+const { manifest } = Constants;
+
+
+const bgImage = require('./images/AppBg.jpg')
+
+import Routes from './components/routes/Routes'
+
+//  Setting Theme
+const theme = {
+  ...DefaultTheme,
+  roundness: 5,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#3498db',
+    accent: '#f1c40f',
+  }
+};
+
+
+
+export default class App extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      homeSelected: 'Gyms'
+    }
+    global.uri = `http://${manifest.debuggerHost.split(':').shift()}:5000`;
+
+  }
+
+  selectHome(select){
+    this.setState({
+      homeSelected : select
+    })
+  }
+
+
+  render() {
+
+    const { homeSelected } = this.state;
+
+    return (
+
+        <View theme={theme}>
+          <StatusBar
+            barStyle="light-content"
+          />
+          <ImageBackground
+              source={bgImage}
+              style={{width: '100%', height: '100%'}}
+          >
+            <Routes />
+          </ImageBackground>
+        </View>
+
   );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#0c0c0c',
   },
+  contentContainerStyle: {
+    flexGrow: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  backgroundView:{
+    width: Dimensions.get('window').width
+  }
 });

@@ -24,10 +24,10 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 router.get('/login', (req, res) => res.send('Login'));
-router.get('/register', (req, res) => res.send('Register'));
+router.get('/register', (req, res) => res.send('Login'));
 
 
-// Register User
+// Login User
 router.post('/register', (req, res) => {
 
     console.log("Request Body - " + req.body.email)

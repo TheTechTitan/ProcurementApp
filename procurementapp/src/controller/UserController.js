@@ -8,7 +8,7 @@ const saltRounds = 10;
 
 const UserController = function(){
 
-    //Create new User (Register)
+    //Create new User (Login)
     this.register = function(data) {
         return new Promise ((resolve, reject) => {
             const user = schema({
