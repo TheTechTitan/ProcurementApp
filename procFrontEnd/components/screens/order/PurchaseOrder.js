@@ -12,6 +12,8 @@ import {
     ImageBackground
 } from 'react-native';
 import { Avatar, Title, Subheading, TextInput, Button } from 'react-native-paper';
+import {Dropdown} from 'react-native-material-dropdown';
+import DatePicker from 'react-native-datepicker'
 
 import {Actions} from "react-native-router-flux";
 
@@ -20,53 +22,34 @@ const bgImage = require('../../../images/AppBg.jpg')
 
 export default class PurchaseOrder extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             OrderItem: '',
             Quantity: '',
-            email: '',
-            company: 0,
-            companyFetched: '',
-            userLevel: 0,
-            pickerVisible: false,
-            pickerVisibleUser: false,
-            password: '',
-            confirmPassword: '',
-            loading: false
+            qty:[{value: '1',}, {value: '2',}, {value: '3',}],
+            supplier:[{value: 'mark',}, {value: 'wallberg',}, {value: 'sheq',}],
+            dSite:[{value: 'w1',}, {value: 'w2',}, {value: 'w3',}],
+            date:"2016-05-15",
+            testingFetch:[]
         }
     }
 
-    /*componentDidUpdate(prevProps) {
-        if (prevProps.homeSelected !== this.props.homeSelected) {
-            this.setState({
-                homeSelected: this.props.homeSelected
-            })
-        }
+    onPost = () => {
+        var { qty } = this.state;
+        console.log(qty) // Undefined
+
     }
 
-    componentDidMount() {
+    onChangeHandler = (value) => {
+        console.log(`Selected value: ${value}`);
+    }
 
-        const fetchCompanyUri = global.uri + '/rest/api/company'
-        console.log(fetchCompanyUri)
-
-        fetch(fetchCompanyUri)
-            .then(response =>{
-                return response.json()
-            })
-            .then(json => {
-                this.setState({
-                    companyFetched : json.data
-                })
-            })
-
-    }*/
 
     render() {
 
-        const { OrderItem, Quantity, company, companyFetched, userLevel, password, confirmPassword, loading, pickerVisible, pickerVisibleUser } = this.state;
-        let companyName = companyFetched.length > 0 ? companyFetched.find(companyFetched => companyFetched._id === company) : '';
-        console.log(companyName)
+        const { OrderItem, Quantity} = this.state;
+
 
         return (
             <ImageBackground
@@ -91,6 +74,7 @@ export default class PurchaseOrder extends Component {
                                 keyboardType='email-address'
                                 onChangeText={text => this.setState({ firstName : text })}
                             />
+
                             <TextInput
                                 mode='flat'
                                 style={styles.inputStyle}
@@ -103,8 +87,21 @@ export default class PurchaseOrder extends Component {
                             />
 
 
+                            <Dropdown
+                                label='Supplier'
+                                data={this.state.supplier}
+                                onChangeText={(value => this.onChangeHandler(value))}
+                            />
 
-                            <Button style={styles.buttonStyle} loading={loading} mode="contained" onPress={() => console.log('pressed')}>
+                            <Dropdown
+                                label='Delivery Site'
+                                data={this.state.dSite}
+
+                            />
+
+
+
+                            <Button style={styles.buttonStyle}  mode="contained" onPress={() => console.log('pressed')}>
                                 PROCEED
                             </Button>
 
