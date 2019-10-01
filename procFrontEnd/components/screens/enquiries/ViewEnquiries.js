@@ -48,8 +48,8 @@ export default class ViewEnquiries extends React.Component {
           </View>
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
-              <Text style={{marginLeft:20}}>Enquiry ID : EN01</Text>
-              <Text style={{marginLeft:20}}>Order ID : OR01</Text>
+              <Text style={{marginLeft:20}}>Enquiry ID : EN001</Text>
+              <Text style={{marginLeft:20}}>Order ID : ON001</Text>
               <Button mode="contained" color='#ffbf00' onPress={this.ViewEnquiries} style={{width:100, marginLeft:250,marginTop:-40}}>
                 VIEW 
               </Button>
@@ -57,8 +57,8 @@ export default class ViewEnquiries extends React.Component {
 
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
-              <Text style={{marginLeft:20}}>Enquiry ID : EN02</Text>
-              <Text style={{marginLeft:20}}>Order ID : OR02</Text>
+              <Text style={{marginLeft:20}}>Enquiry ID : EN002</Text>
+              <Text style={{marginLeft:20}}>Order ID : ON002</Text>
               <Button mode="contained" color='#ffbf00' onPress={() => console.log('View Enquiry')} style={{width:100, marginLeft:250,marginTop:-40}}>
                 VIEW 
               </Button>
@@ -66,8 +66,8 @@ export default class ViewEnquiries extends React.Component {
 
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
-              <Text style={{marginLeft:20}}>Enquiry ID : EN03</Text>
-              <Text style={{marginLeft:20}}>Order ID : OR03</Text>
+              <Text style={{marginLeft:20}}>Enquiry ID : EN003</Text>
+              <Text style={{marginLeft:20}}>Order ID : ON003</Text>
               <Button mode="contained" color='#ffbf00' onPress={() => console.log('View Enquiry')} style={{width:100, marginLeft:250,marginTop:-40}}>
                 VIEW 
               </Button>
@@ -75,8 +75,8 @@ export default class ViewEnquiries extends React.Component {
 
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
-              <Text style={{marginLeft:20}}>Enquiry ID : EN04</Text>
-              <Text style={{marginLeft:20}}>Order ID : OR04</Text>
+              <Text style={{marginLeft:20}}>Enquiry ID : EN004</Text>
+              <Text style={{marginLeft:20}}>Order ID : ON004</Text>
               <Button mode="contained" color='#ffbf00' onPress={() => console.log('View Enquiry')} style={{width:100, marginLeft:250,marginTop:-40}}>
                 VIEW 
               </Button>
@@ -84,8 +84,8 @@ export default class ViewEnquiries extends React.Component {
 
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
-              <Text style={{marginLeft:20}}>Enquiry ID : EN05</Text>
-              <Text style={{marginLeft:20}}>Order ID : OR05</Text>
+              <Text style={{marginLeft:20}}>Enquiry ID : EN005</Text>
+              <Text style={{marginLeft:20}}>Order ID : ON005</Text>
               <Button mode="contained" color='#ffbf00' onPress={() => console.log('View Enquiry')} style={{width:100, marginLeft:250,marginTop:-40}}>
                 VIEW 
               </Button>
