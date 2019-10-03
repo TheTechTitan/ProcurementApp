@@ -1,110 +1,106 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, ScrollView, ImageBackground, TouchableOpacity, Switch, Dimensions } from 'react-native';
 import { Checkbox, Card, TextInput, Button, Paragraph, Dialog, Portal, Divider, IconButton, Colors, RadioButton } from 'react-native-paper';
-
 import {Actions} from "react-native-router-flux";
  
 export default class OrderDetails extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state={
-        homeSelected : this.props.homeSelected,
-        dataOrders : [],
-
-        checked: 'first',
-
-
-
+    constructor(props){
+        super(props);
+        this.state={
+            homeSelected : this.props.homeSelected,
+            dataOrders : [],
+            checked: 'first',
+            }
         }
-    }
-    
-  render() {
-    const { checked } = this.state;
-    const {homeSelected, dataGym, dataClasses} = this.state;
+        
+    render() {
+        const { checked } = this.state;
+        const {homeSelected, dataGym, dataClasses} = this.state;
 
-    let dataOrders = [
-        {
-            orderID : 'ON001',
-            status : 'Delivered',
-        },
-        {
-            orderID : 'ON002',
-            status : 'Partially-Delivered',
-        },
-        {orderID:"ON01",
-        itemList:[
-            {_id:"5d8f44571b8aa71710689b7c",
-            item:"5d8f43a51b8aa71710689b79",
-            quantity:5
-        },
-        {_id:"5d8f44571b8aa71710689b7b",
-        item:"5d8f43a51b8aa71710689b79",
-        quantity:2
-        }
-        ]
-        }
-    ]
-
-    let dataOrdersList2 = [
-        {
-            orderID: '#ON005',
-            itemID: '#IN001',
-            itemName: 'Metal',
-            quantity:'3 Cubes',
-            amount: '21000 LKR',
-            supplier: 'Wijethunga Hardware Malabe',
-            deliverySite: 'Site 1 Malabe',
-            dueDate:'25/08/19'
-        },
-        {
-            orderID: '#ON005',
-            itemID: '#IN002',
-            itemName: 'SLON-PVC-25MM-200M',
-            quantity:'45',
-            amount: '9000 LKR',
-            supplier: 'Wijethunga Hardware Malabe',
-            deliverySite: 'Site 2 Malabe',
-            dueDate:'27/08/19'
-        }
-    ]
-
-    let dataOrdersList = [
-        {
-            orderID: '#ON005',
-
+        let dataOrders = [
+            {
+                orderID : 'ON001',
+                status : 'Delivered',
+            },
+            {
+                orderID : 'ON002',
+                status : 'Partially-Delivered',
+            },
+            {orderID:"ON001",
             itemList:[
-                {
+                {_id:"5d8f44571b8aa71710689b7c",
+                item:"5d8f43a51b8aa71710689b79",
+                quantity:5
+            },
+            {_id:"5d8f44571b8aa71710689b7b",
+            item:"5d8f43a51b8aa71710689b79",
+            quantity:2
+            }
+            ]
+            }
+        ]
+
+        let dataOrdersList2 = [
+            {
+                orderID: '#ON005',
                 itemID: '#IN001',
                 itemName: 'Metal',
                 quantity:'3 Cubes',
                 amount: '21000 LKR',
                 supplier: 'Wijethunga Hardware Malabe',
-                 deliverySite: 'Site 1 Malabe',
+                deliverySite: 'Site 1 Malabe',
                 dueDate:'25/08/19'
-                },
-
-                 {
-            itemID: '#IN002',
-            itemName: 'SLON-PVC-25MM-200M',
-            quantity:'45',
-            amount: '9000 LKR',
-            supplier: 'Wijethunga Hardware Malabe',
-            deliverySite: 'Site 2 Malabe',
-            dueDate:'27/08/19'
+            },
+            {
+                orderID: '#ON005',
+                itemID: '#IN002',
+                itemName: 'SLON-PVC-25MM-200M',
+                quantity:'45',
+                amount: '9000 LKR',
+                supplier: 'Wijethunga Hardware Malabe',
+                deliverySite: 'Site 2 Malabe',
+                dueDate:'27/08/19'
             }
+        ]
+
+        let dataOrdersList = [
+            {
+                orderID: '#ON005',
+
+                itemList:[
+                    {
+                    itemID: '#IN001',
+                    itemName: 'Metal',
+                    quantity:'3 Cubes',
+                    amount: '21000 LKR',
+                    supplier: 'Wijethunga Hardware Malabe',
+                    deliverySite: 'Site 1 Malabe',
+                    dueDate:'25/08/19'
+                    },
+
+                    {
+                    itemID: '#IN002',
+                    itemName: 'SLON-PVC-25MM-200M',
+                    quantity:'45',
+                    amount: '9000 LKR',
+                    supplier: 'Wijethunga Hardware Malabe',
+                    deliverySite: 'Site 2 Malabe',
+                    dueDate:'27/08/19'
+                    }
+        ]
+    }
     ]
-}
-]
-   
+    
 
     return (
-
+      
+      //To view order details
       <View style={{flex: 1}}>
       <ImageBackground
       resizeMode={'stretch'} // or cover
       style={{flex: 1}}
-      source={require('C:/Users/sasmini_112033/Desktop/FitzkyUEE/fitzkyUEE/components/screens/spm/InterfaceNew.png')}
+      source={require('../../../images/AppBg.jpg')}
       >
        
        <View style={{marginTop:20}}>
@@ -166,18 +162,24 @@ export default class OrderDetails extends React.Component {
                         <Text style={{textAlign: 'center'}}>ORDER TOTAL AMOUNT : 30000 LKR</Text>
                       </Card>
                     </View>
+
+                    {/* Button to edit order details */}
                     <Button  mode="contained" onPress={() => console.log('Edit Enquiry')} color='#ffbf00'  style={{width:150, marginLeft:-220, marginTop:35, height:38}}>
                        EDIT
                     </Button>
+
+                    {/* Button to add an enquiry */}
                     <Button  mode="contained" onPress={() => console.log('Add Enquiry')} color='#ffbf00' style={{width:150, marginLeft:105, marginTop:-42, height:38}}>
                       ENQUIRY
                     </Button>
+                    
+                    {/* Button to delete order */}
                     <IconButton style={{marginLeft:330, marginTop:-42}}
                           icon="delete"
                           color='#ffbf00'
                           size={45}
                           onPress={() => console.log('Delete order')}
-                          />
+                    />
 
             </ScrollView>
       </ImageBackground>
@@ -187,6 +189,7 @@ export default class OrderDetails extends React.Component {
   }
 }
 
+//Stylesheet
 const styles = StyleSheet.create({
   card: {
     width : Dimensions.get('window').width - 30,
@@ -222,12 +225,5 @@ contentContainerStyle: {
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingTop : 15,
-  
-
-}
- 
-    
-     
+}     
 });
-
-
