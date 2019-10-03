@@ -98,7 +98,10 @@ class HomeData extends Component {
                 { dataOrdersList.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
+                                 <View style={{paddingTop:18, height:50, flexDirection:'row', alignSelf:'center'}}>
+                                                <Text style={{textAlign:'center',fontWeight:"800",fontSize:25,color:'#f2a600'}}>ORDER NO :</Text>
                                          <Text style={{fontSize:25, textAlign:'center', fontWeight:"800", color:"#f2a600"}}>{dataObject.orderID}</Text>
+                                         </View>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                         <View style={{paddingTop:18, height:50, flexDirection:'row'}}>
                                                 <Text style={{textAlign:'left',fontWeight:"800",fontSize:20,color:'#000000'}}>ORDER ITEM NO   :</Text>
