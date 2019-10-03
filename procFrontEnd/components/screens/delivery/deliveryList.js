@@ -98,10 +98,11 @@ class HomeData extends Component {
                 { dataOrdersList.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-                                         <Text style={{fontSize:25, textAlign:'center', fontWeight:"100", color:"#f2a600"}}>{dataObject.orderID}</Text>
+                                         <Text style={{fontSize:25, textAlign:'center', fontWeight:"800", color:"#f2a600"}}>{dataObject.orderID}</Text>
                                         <Card.Content  key={index + "class" + "cardContent"}>
-                                        <View style={{paddingTop:18, height:50}}>
-                                                   <Text style={{textAlign:'left', color:'#f2a600', fontSize:20, fontWeight:"300"}}>{dataObject.itemList[0].itemID}</Text>
+                                        <View style={{paddingTop:18, height:50, flexDirection:'row'}}>
+                                                <Text style={{textAlign:'left',fontWeight:"800",fontSize:20,color:'#000000'}}>ORDER ITEM NO   :</Text>
+                                                   <Text style={{textAlign:'right', color:'#000000', fontSize:20, fontWeight:"800"}}>{dataObject.itemList[0].itemID}</Text>
                                         </View>
                                         <View style={{flexDirection:'column'}}>
                                                 <View style={{flexDirection:'row'}}>
@@ -141,8 +142,9 @@ class HomeData extends Component {
                                             </Picker>
                                             </View> 
                                         </View>
-                                        <View style={{paddingTop:18, height:50}}>
-                                                   <Text style={{textAlign:'left', color:'#f2a600', fontSize:20, fontWeight:"300"}}>{dataObject.itemList[1].itemID}</Text>
+                                        <View style={{paddingTop:18, height:50, flexDirection:'row'}}>
+                                                    <Text style={{textAlign:'left',fontSize:20,fontWeight:"800",color:'#000000'}}>ORDER ITEM NO  :</Text>
+                                                   <Text style={{textAlign:'right', color:'#000000',  fontSize:20,fontWeight:"800"}}>{dataObject.itemList[1].itemID}</Text>
                                         </View>
                                         <View style={{flexDirection:'column'}}>
                                                 <View style={{flexDirection:'row'}}>
