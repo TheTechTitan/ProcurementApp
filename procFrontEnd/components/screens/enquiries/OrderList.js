@@ -13,20 +13,18 @@ class OrderList extends Component {
         }
     }
 
+    //Navigate to order details page
     onCardPress = (dataObject) =>{
 
         console.log('Card Pressed ' + this.state.homeSelected);
-        Action.jump('deliveryNotification')
-
-
+        Action.jump('orderDetails')
     }
-
-  
 
     render() {
 
         const {homeSelected, dataGym, dataClasses} = this.state;
 
+        //Orders
         let dataOrders = [
             {
                 orderID : 'ON001',
@@ -59,16 +57,14 @@ class OrderList extends Component {
            
         ]
        
-        
-
         return (
          
-   
+          //To view order list
           <View style={{flex: 1}}>
           <ImageBackground
            resizeMode={'stretch'} // or cover
            style={{flex: 1}} // must be passed from the parent, the number may vary depending upon your screen size
-           source={require('C:/Users/sasmini_112033/Desktop/FitzkyUEE/fitzkyUEE/components/screens/spm/InterfaceNew.png')}
+           source={require('../../../images/AppBg.jpg')}
           >    
           <View style={{marginTop:20}}>
           <Text style={{fontSize:45,color:'#ffa600',fontWeight:"bold",marginLeft:90}}>ORDER LIST</Text>
@@ -121,6 +117,7 @@ class OrderList extends Component {
 
 export default OrderList;
 
+//Stylesheet
 const styles = StyleSheet.create({
 
     card: {
@@ -128,7 +125,6 @@ const styles = StyleSheet.create({
         marginTop : 20,
         backgroundColor: '#ffffff',
         paddingTop:10
-
     },
     cardCover:{
         overflow: 'hidden',
@@ -159,6 +155,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop : 15,
         paddingBottom : Dimensions.get('window').height / 1.6,
-
     }
 });
