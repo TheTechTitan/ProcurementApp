@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet,TouchableOpacity, Text, ScrollView, FlatList, ImageBackground } from 'react-native';
 import { Checkbox, Card, TextInput, Button, Paragraph, Dialog, Portal, Divider, IconButton, Colors, RadioButton } from 'react-native-paper';
 
- 
 export default class ViewEnquiries extends React.Component {
 
     // state = {
@@ -23,7 +22,8 @@ export default class ViewEnquiries extends React.Component {
    
 
     return (
-
+        
+        // To view previous enquiries
         <View style={{flex: 1}}>
         <ImageBackground
         resizeMode={'stretch'} // or cover
@@ -31,8 +31,8 @@ export default class ViewEnquiries extends React.Component {
         source={require('../../../images/AppBg.jpg')}
         >
        
-      <ScrollView style={{height:'100%'}}>
-      
+        <ScrollView style={{height:'100%'}}>
+        
         <View>
            {/* <FlatList 
            data={this.state.data}
@@ -45,7 +45,7 @@ export default class ViewEnquiries extends React.Component {
            <View>
             <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:200,marginTop:20}}>ENQUIRY</Text>
             <Text style={{fontSize:45,color:'#ffa600',fontWeight:'bold',marginLeft:298}}>LIST</Text>
-          </View>
+           </View>
            <TouchableOpacity style={styles.card}> 
               <Text style={styles.cardText}>Enquiry</Text> 
               <Text style={{marginLeft:20}}>Enquiry ID : EN001</Text>
@@ -98,6 +98,8 @@ export default class ViewEnquiries extends React.Component {
     );
   }
 }
+
+//Stylesheet
 const styles = StyleSheet.create({
  container: {
      backgroundColor:"#F5FCFF",
@@ -117,15 +119,9 @@ const styles = StyleSheet.create({
          width:3,
          height:3
      }
-
  },
  cardText: {
     padding:10,
     fontSize:25
- }
- 
-    
-     
+ }     
 });
-
-
