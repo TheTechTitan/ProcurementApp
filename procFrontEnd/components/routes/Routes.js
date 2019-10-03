@@ -14,6 +14,7 @@ import SupplierMain from '../screens/supplier/supplierMain';
 import PurchaseOrder from '../screens/order/PurchaseOrder';
 import OrderSummary from '../screens/order/OrderSummary';
 import ViewCart from '../screens/order/ViewCart';
+import updatedDeliveryStatusList from '../screens/delivery/updatedDeliveryStatusList';
 
 
 
@@ -45,6 +46,8 @@ class Routes extends Component{
                     <Scene key = "purchaseOrder" component = {PurchaseOrder} navTransparent={true}/>
                     <Scene key = "orderSummary" component = {OrderSummary} navTransparent={true}/>
                     <Scene key = "viewCart" component = {ViewCart} navTransparent={true}/>
+                    <Scene key = "updatedDeliveryStatusList" component = {updatedDeliveryStatusList} navTransparent={true}/>
+
 
                 </Scene>
             </Router>

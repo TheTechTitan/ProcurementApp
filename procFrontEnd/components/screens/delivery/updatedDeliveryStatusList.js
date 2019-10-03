@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image
 import { Avatar, Button, Card, Title, Paragraph, Chip } from 'react-native-paper';
 import {Actions} from "react-native-router-flux";
 
+
 class HomeData extends Component {
 
     constructor(props){
@@ -18,9 +19,7 @@ class HomeData extends Component {
         console.log('Card Pressed ' + this.state.homeSelected);
         Action.jump('deliveryNotification')
     }
-
     render() {
-
         let dataOrders = [
             {
                 orderID : '#ON001',
@@ -28,7 +27,7 @@ class HomeData extends Component {
             },
             {
                 orderID : '#ON002',
-                status : 'Partially-Delivered',
+                status : 'Delivered',
             },
             {
                 orderID : '#ON003',
@@ -45,7 +44,7 @@ class HomeData extends Component {
            
         ]
 
-        //List all the approved orders with their delivery status 
+        //Display the approved orders list after updating the delivery status of an order
         return (
           <View style={{flex: 1}}>
           <ImageBackground
@@ -71,7 +70,7 @@ class HomeData extends Component {
                 { dataOrders.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-                                    <TouchableOpacity onPress={() => Actions.jump('deliveryList')} key={index + "class" + "touchable"}>
+                                    <TouchableOpacity disabled={true} key={index + "class" + "touchable"}>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                             <View style={{paddingTop:18, flexDirection:'row', height:50}}>
                                                 <View>
@@ -98,7 +97,6 @@ class HomeData extends Component {
 
 export default HomeData;
 
-//styles for each element
 const styles = StyleSheet.create({
 
     card: {
