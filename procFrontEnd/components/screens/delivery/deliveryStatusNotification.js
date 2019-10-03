@@ -41,7 +41,7 @@ export default class deliveryStatusNotification extends Component {
           <Button title= "     OK      "
           color="#f7c50c"
           
-           onPress={() => Actions.jump('deliveryList')}
+           onPress={() => Actions.jump('updatedDeliveryStatusList')}
            />
         </View>
       </Dialog.Actions>

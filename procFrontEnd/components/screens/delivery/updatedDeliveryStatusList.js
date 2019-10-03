@@ -23,51 +23,6 @@ class HomeData extends Component {
 
 
     }
-
-    // onBookNow = () =>{
-
-    //     console.log('Book Now Pressed ' + this.state.homeSelected);
-    //     Actions.jump('reservationMain')
-
-
-    // }
-
-    // selectHome(select){
-    //     this.setState({
-    //         homeSelected : select
-    //     })
-    // }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.homeSelected !== this.props.homeSelected) {
-    //         this.setState({
-    //             homeSelected: this.props.homeSelected
-    //         })
-    //     }
-    // }
-
-    // componentDidMount() {
-
-
-    //     const ipAddress = "192.168.8.101"
-
-    //     const getClasses = "http://"+ ipAddress +":5000/order/Order";
-    //     // const getGyms = "http://"+ ipAddress +":5000/class/Gym";
-
-
-    //     fetch(getClasses)
-    //         .then(response =>{
-    //             return response.json()
-    //         })
-    //         .then(json => {
-    //             this.setState({
-    //                 dataClasses : json
-    //             })
-    //         })
-
-      
-    // }
-
     render() {
 
         const {homeSelected, dataGym, dataClasses} = this.state;
@@ -79,7 +34,7 @@ class HomeData extends Component {
             },
             {
                 orderID : '#ON002',
-                status : 'Partially-Delivered',
+                status : 'Delivered',
             },
             {
                 orderID : '#ON003',
@@ -120,7 +75,7 @@ class HomeData extends Component {
                 { dataOrders.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-                                    <TouchableOpacity onPress={() => Actions.jump('deliveryList')} key={index + "class" + "touchable"}>
+                                    <TouchableOpacity disabled={true} key={index + "class" + "touchable"}>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                             <View style={{paddingTop:18, flexDirection:'row', height:50}}>
                                                 <View>

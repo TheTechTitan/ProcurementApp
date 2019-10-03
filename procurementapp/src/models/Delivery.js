@@ -10,9 +10,9 @@ var deliverySchema = Schema ({
         type: String
     },
     orderId : {
-        // type: Schema.Types.ObjectId,
-        // ref: 'Order'
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Order'
+        // type: String
     },
     status : {
         type: String,
