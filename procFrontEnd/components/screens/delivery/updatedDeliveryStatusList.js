@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip } from 'react-native-paper';
 import {Actions} from "react-native-router-flux";
-// import { Actions } from 'react-native-router-flux';
-// import NavBar from "./Homescreen";
+
 
 class HomeData extends Component {
 
@@ -17,16 +16,10 @@ class HomeData extends Component {
     }
 
     onCardPress = (dataObject) =>{
-
         console.log('Card Pressed ' + this.state.homeSelected);
         Action.jump('deliveryNotification')
-
-
     }
     render() {
-
-        const {homeSelected, dataGym, dataClasses} = this.state;
-
         let dataOrders = [
             {
                 orderID : '#ON001',
@@ -50,6 +43,8 @@ class HomeData extends Component {
             },
            
         ]
+
+        //Display the approved orders list after updating the delivery status of an order
         return (
           <View style={{flex: 1}}>
           <ImageBackground

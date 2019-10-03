@@ -7,6 +7,8 @@ const bgImage = require('../../../images/AppBg.jpg')
 
 export default class deliveryStatusNotification extends Component {
 
+  //Display a dialog box.
+  //Message is yuor delivery has been confirmed successful
   render() {
     return (
       <View style={{marginTop:20}}>
@@ -16,8 +18,7 @@ export default class deliveryStatusNotification extends Component {
             >
       <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>DELIVERY</Text>
     <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>CONFIRMATION</Text>
-      
-
+    
         <Dialog
         visible={true}
         

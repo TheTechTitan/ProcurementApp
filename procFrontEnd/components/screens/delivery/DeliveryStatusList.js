@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip } from 'react-native-paper';
 import {Actions} from "react-native-router-flux";
-// import { Actions } from 'react-native-router-flux';
-// import NavBar from "./Homescreen";
 
 class HomeData extends Component {
 
@@ -17,60 +15,11 @@ class HomeData extends Component {
     }
 
     onCardPress = (dataObject) =>{
-
         console.log('Card Pressed ' + this.state.homeSelected);
         Action.jump('deliveryNotification')
-
-
     }
 
-    // onBookNow = () =>{
-
-    //     console.log('Book Now Pressed ' + this.state.homeSelected);
-    //     Actions.jump('reservationMain')
-
-
-    // }
-
-    // selectHome(select){
-    //     this.setState({
-    //         homeSelected : select
-    //     })
-    // }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.homeSelected !== this.props.homeSelected) {
-    //         this.setState({
-    //             homeSelected: this.props.homeSelected
-    //         })
-    //     }
-    // }
-
-    // componentDidMount() {
-
-
-    //     const ipAddress = "192.168.8.101"
-
-    //     const getClasses = "http://"+ ipAddress +":5000/order/Order";
-    //     // const getGyms = "http://"+ ipAddress +":5000/class/Gym";
-
-
-    //     fetch(getClasses)
-    //         .then(response =>{
-    //             return response.json()
-    //         })
-    //         .then(json => {
-    //             this.setState({
-    //                 dataClasses : json
-    //             })
-    //         })
-
-      
-    // }
-
     render() {
-
-        const {homeSelected, dataGym, dataClasses} = this.state;
 
         let dataOrders = [
             {
@@ -95,6 +44,8 @@ class HomeData extends Component {
             },
            
         ]
+
+        //List all the approved orders with their delivery status 
         return (
           <View style={{flex: 1}}>
           <ImageBackground
@@ -147,6 +98,7 @@ class HomeData extends Component {
 
 export default HomeData;
 
+//styles for each element
 const styles = StyleSheet.create({
 
     card: {

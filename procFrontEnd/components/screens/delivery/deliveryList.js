@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Image , ImageBackground, Picker, Switch} from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, Chip, RadioButton, TextInput } from 'react-native-paper';
 import {Actions} from "react-native-router-flux";
-// import { Actions } from 'react-native-router-flux';
-// import NavBar from "./Homescreen";
+
 class HomeData extends Component {
 
     constructor(props){
@@ -13,16 +12,12 @@ class HomeData extends Component {
             dataOrders : [],
             driverInfo:'',
             deliverRoute:'',
-
-
             switch1Value: false,
             checked: 'first',
-
             status1:'partially delivered',
             status2:''
-
             }
-        }
+    }
 
 
 
@@ -35,7 +30,7 @@ class HomeData extends Component {
 
     render() {
         const { checked } = this.state;
-        const {homeSelected, dataGym, dataClasses, deliverRoute, driverInfo} = this.state;
+        const {deliverRoute, driverInfo} = this.state;
 
         let dataOrdersList = [
             {
@@ -64,13 +59,9 @@ class HomeData extends Component {
         ]
     }
 ]
-      
+      //Mapping all the approved orders
         return (
-
-
           <View style={{flex: 1}}>
-
-
           <ImageBackground
            resizeMode={'stretch'} // or cover
            style={{flex: 1}} // must be passed from the parent, the number may vary depending upon your screen size
@@ -103,18 +94,14 @@ class HomeData extends Component {
                             keyboardType='email-address'
                             onChangeText={text => this.setState({ driverInfo : text })}
                         />
+                
                 { dataOrdersList.map((dataObject, index) =>{
                         return(
                             <Card style={styles.card} theme={{ roundness : 15 }} key={index + "class"}>
-
-
                                          <Text style={{fontSize:25, textAlign:'center', fontWeight:"100", color:"#f2a600"}}>{dataObject.orderID}</Text>
                                         <Card.Content  key={index + "class" + "cardContent"}>
                                         <View style={{paddingTop:18, height:50}}>
-                                             
                                                    <Text style={{textAlign:'left', color:'#f2a600', fontSize:20, fontWeight:"300"}}>{dataObject.itemList[0].itemID}</Text>
-                                                
-                                              
                                         </View>
                                         <View style={{flexDirection:'column'}}>
                                                 <View style={{flexDirection:'row'}}>
@@ -155,10 +142,7 @@ class HomeData extends Component {
                                             </View> 
                                         </View>
                                         <View style={{paddingTop:18, height:50}}>
-                                             
                                                    <Text style={{textAlign:'left', color:'#f2a600', fontSize:20, fontWeight:"300"}}>{dataObject.itemList[1].itemID}</Text>
-                                               
-                                              
                                         </View>
                                         <View style={{flexDirection:'column'}}>
                                                 <View style={{flexDirection:'row'}}>
@@ -196,16 +180,14 @@ class HomeData extends Component {
                                                 <Picker.Item label="Delivered" value="delivered" />
                                                 <Picker.Item label="Partially Delivered" value="partially delivered" />
                                             </Picker>
-                                            </View> 
-
-                                               
+                                            </View>       
                                         </View>
                                         </Card.Content>
                                     
                             </Card>
                         )
                     })}
-                    <Card style={styles.card}>
+                    <Card style={{ width : Dimensions.get('window').width - 30,marginTop : 20,backgroundColor: '#ffffff', height:25}}>
                     <View style={{flexDirection:'row'}}>
                                                     <Text style={{fontSize:18}}>Confirm Delivery</Text>
                                                 <Switch
@@ -217,14 +199,13 @@ class HomeData extends Component {
             </ScrollView>
             </ImageBackground>
             </View>
-
-
         );
     }
 }
 
 export default HomeData;
 
+//Styles for each element
 const styles = StyleSheet.create({
 
     card: {
