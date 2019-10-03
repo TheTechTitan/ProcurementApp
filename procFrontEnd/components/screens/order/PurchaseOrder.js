@@ -13,10 +13,15 @@ import {
 } from 'react-native';
 import { Avatar, Title, Subheading, TextInput, Button } from 'react-native-paper';
 import {Dropdown} from 'react-native-material-dropdown';
-
+import DatePicker from 'react-native-datepicker'
 import {Actions} from "react-native-router-flux";
+import Icon from 'react-native-vector-icons/FontAwesome'
+
+
 
 const bgImage = require('../../../images/AppBg.jpg')
+
+//const iconImage= require('../../../images/add_cart.PNG')
 
 
 export default class PurchaseOrder extends Component {
@@ -24,30 +29,101 @@ export default class PurchaseOrder extends Component {
     constructor(props){
         super(props);
         this.state={
-            OrderItem: '',
-            Quantity: '',
-            qty:[{value: '1',}, {value: '2',}, {value: '3',}],
-            supplier:[{value: 'mark',}, {value: 'wallberg',}, {value: 'sheq',}],
-            dSite:[{value: 'w1',}, {value: 'w2',}, {value: 'w3',}],
+            itemID:0,
+            orderId: 0,
             date:"2016-05-15",
-            testingFetch:[]
+            itemName:'',
+            qty: '' ,
+            supplier:[],
+            supplierSelected:'',
+            deliverySite:[{value:'ds1'},{value:'ds2'},{value:'ds3'}],
+            deliverySiteSelected:'',
+            temp:[],
+            itemList:[]
+
         }
     }
 
-    onPost = () => {
-        var { qty } = this.state;
-        console.log(qty) // Undefined
+    componentDidMount() {
+
+        const fetchCompanyUri = global.uri + '/rest/api/supplier'
+        console.log(fetchCompanyUri)
+
+        fetch(fetchCompanyUri)
+            .then(response =>{
+                return response.json()
+            })
+            .then(json => {
+
+                json.data.map(supplier=>{
+
+                    this.state.temp=[...this.state.temp, {value:supplier.name}]
+
+                });
+
+                //console.log(this.state.temp);
+
+                this.setState({
+                    supplier : this.state.temp
+                })
+                //console.log(this.state.supplier);
+            })
 
     }
 
-    onChangeHandler = (value) => {
-        console.log(`Selected value: ${value}`);
+
+    onPurchaseOrder=()=>{
+
+        this.setState({
+            orderId : this.state.orderId+1
+        })
     }
 
+
+    handlerAddToCart=()=>{
+
+        console.log("IN".concat(this.state.itemID));
+
+
+        let itemData = {
+            itemID : "IN".concat(this.state.itemID),
+            itemName : this.state.itemName,
+            quantity : this.state.qty,
+            amount : 100,
+            supplier : this.state.supplierSelected,
+            deliverySite : this.state.deliverySiteSelected,
+            dueDate : this.state.date
+        }
+
+        const itemList=this.state.itemList.concat(itemData);
+
+        this.setState({
+            itemList : itemList
+        })
+
+
+        this.setState({
+            itemID : this.state.itemID+1
+        })
+
+    }
+
+    removeItem=(itemID)=>{
+
+        console.log('Deleting' + itemID)
+        const updatedItemList=this.state.itemList.filter(item=>item.itemID !==itemID)
+
+        console.log(updatedItemList)
+
+        this.setState({
+            itemList: updatedItemList
+        })
+
+    }
 
     render() {
 
-        const { OrderItem, Quantity} = this.state;
+        const { itemName , qty , supplier , deliverySite } = this.state;
 
 
         return (
@@ -57,54 +133,103 @@ export default class PurchaseOrder extends Component {
             >
                 <SafeAreaView>
                     <ScrollView>
-                        <View style={styles.container}>
-                            <Avatar.Icon style={styles.iconStyle} size={100} icon="business"/>
-                        </View>
+
                         <View>
-                            <Title style={styles.titleStyle}>Purchase Order</Title>
+                            <View style={{marginTop:20}}>
+                                <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>PURCHASE</Text>
+                                <Text style={{textAlign:'right', color:"#f2a600", fontWeight:"bold", fontSize:45}}>ORDER</Text>
+                            </View>
+
 
                             <TextInput
                                 mode='flat'
                                 style={styles.inputStyle}
                                 label='Item'
-                                value={OrderItem}
+                                value= {itemName}
                                 selectionColor='#f4c737'
                                 textContentType='name'
                                 keyboardType='email-address'
-                                onChangeText={text => this.setState({ firstName : text })}
+                                onChangeText={text => this.setState({ itemName : text })}
                             />
 
                             <TextInput
                                 mode='flat'
                                 style={styles.inputStyle}
                                 label='Quantity'
-                                value={Quantity}
+                                value= {qty}
                                 selectionColor='#f4c737'
                                 textContentType='name'
                                 keyboardType='email-address'
-                                onChangeText={text => this.setState({ lastName : text })}
+                                onChangeText={text => this.setState({ qty : text })}
                             />
+
                             <View style={{alignSelf: 'center', width: '80%'}}>
 
                             <Dropdown
                                 label='Supplier'
-                                data={this.state.supplier}
+                                data={supplier}
                                 baseColor='white'
-                                onChangeText={(value => this.onChangeHandler(value))}
-                                style={{color: 'black', height: 50, width: '80%', alignSelf: 'center'}}
+                                onChangeText={(value) => this.setState({ supplierSelected : value })}
+                                style={{color: 'white', height: 50, width: '80%', alignSelf: 'center' }}
                             />
 
                             <Dropdown
                                 label='Delivery Site'
-                                data={this.state.dSite}
+                                data={deliverySite}
                                 baseColor='white'
-                                style={{color: 'black', height: 50, width: '80%', alignSelf: 'center', marginBottom: 20}}
+                                onChangeText={(value) => this.setState({ deliverySiteSelected : value })}
+                                style={{color: 'white', height: 50, width: '80%', alignSelf: 'center', marginBottom: 20}}
 
                             />
 
+                            <View>
+                                <DatePicker
+                                    style={{width: 200}}
+                                    date={this.state.date}
+                                    mode="date"
+                                    androidMode="spinner"
+                                    placeholder="select date"
+                                    format="YYYY-MM-DD"
+                                    minDate="2016-05-01"
+                                    maxDate="2016-06-01"
+                                    confirmBtnText="Confirm"
+                                    cancelBtnText="Cancel"
+                                    customStyles={{
+                                        dateIcon: {
+                                            position: 'absolute',
+                                            left: 0,
+                                            top: 4,
+                                            marginLeft: 0
+                                        },
+                                        dateInput: {
+                                            marginLeft: 50,
+                                            width: '80%',
+                                            marginTop: 10,
+                                            alignSelf: 'center'
+
+                                        }
+
+                                    }}
+                                    onDateChange={(date) => {this.setState({date: date})}}
+                                />
                             </View>
 
-                            <Button style={styles.buttonStyle}  mode="contained" onPress={() => console.log('pressed')}>
+
+                            </View>
+
+
+                            <View style={{flexDirection:'row', paddingLeft:20 , justifyContent: 'space-around' , marginTop: 20 , fontSize: 20}} >
+                                <Icon.Button  name="cart-plus" backgroundColor="#312B2B" color='#f4c737' size={45}  mode="contained" onPress={this.handlerAddToCart}>
+
+                                </Icon.Button>
+
+                                <Icon.Button name="cart-arrow-down"  backgroundColor="#312B2B" color='#f4c737' size={45}  mode="contained" onPress={() => {Actions.viewCart({itemList:this.state.itemList , removeItem:this.removeItem , orderId:this.state.orderId})}  }>
+
+                                </Icon.Button>
+
+                            </View>
+
+                            <Button style={styles.buttonStyle}   mode="contained" onPress={() => {Actions.orderSummary({itemList:this.state.itemList, orderId:this.state.orderId })}} >
                                 PROCEED
                             </Button>
 
@@ -155,6 +280,7 @@ const styles = StyleSheet.create({
         width: '80%',
         marginTop: 10,
         alignSelf: 'center',
-        backgroundColor: '#f4c737'
+        backgroundColor: '#f4c737',
+        color:'white'
     }
 });

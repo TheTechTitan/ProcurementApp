@@ -31,5 +31,19 @@ const itemController=function () {
         })
     }
 
+
+    this.getItem = (itemname) => {
+        return new Promise((resolve, reject) => {
+
+            console.log(itemname)
+            let itemName = new RegExp(["^", itemname, "$"].join(""), "i");
+            itemModel.find({name:itemName}).then((data) => {
+                resolve({status: 200, item: data});
+            }).catch(err => {
+                reject({status: 500, message: "Error:- " + err});
+            })
+        })
+    }
+
 }
 module.exports=new itemController();

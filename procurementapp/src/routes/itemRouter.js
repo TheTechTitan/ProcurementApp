@@ -21,4 +21,13 @@ router.get('/get-items', (req, res, next) => {
 });
 
 
+router.get('/get-item/:itemName', (req, res, next) => {
+
+    itemController.getItem(req.params.itemName).then((data) => {
+        res.status(data.status).send(data.item)
+    }).catch(err => {
+        res.status(err.status).send({message: "Error: " + err})
+    })
+});
+
 module.exports = router;
